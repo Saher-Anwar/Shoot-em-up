@@ -5,9 +5,11 @@ using UnityEngine.Rendering;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float speed = 4f;
+    public float walkingSpeed = 4f;
+    public float runningSpeed = 6f;
 
     private CharacterController characterController;
+    private Character character;
     private float horizontal;
     private float vertical;
     private Vector3 mousePos;
@@ -17,6 +19,7 @@ public class CharacterMovement : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        character = GetComponent<Character>();
     }
 
     // Update is called once per frame
@@ -29,7 +32,16 @@ public class CharacterMovement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        characterController.SimpleMove(new Vector3(horizontal, 0, vertical) * speed);
+        if (Input.GetKey(KeyCode.LeftShift) && character.maxStamina > 0)
+        {
+            characterController.SimpleMove(new Vector3(horizontal, 0, vertical) * runningSpeed);
+            character.ReduceStamina();
+        }
+        else
+        {
+            characterController.SimpleMove(new Vector3(horizontal, 0, vertical) * walkingSpeed);
+            character.RegenStamina();
+        }
         #endregion
     }
 
