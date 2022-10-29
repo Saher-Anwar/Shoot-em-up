@@ -18,17 +18,41 @@ public class Character : MonoBehaviour
 
     private float currentHealth;
     public float currentStamina; // TODO: change to private 
+    public STAMINA_STATE staminaState;
+    private float elapsedTime = 0;
+
+    public enum STAMINA_STATE
+    {
+        ReducingStamina,
+        RegeningStamina,
+        StandBy,
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         currentStamina = maxStamina;
+        staminaState = STAMINA_STATE.StandBy;
     }
 
     // Update is called once per frame
     void Update()
     {
+        elapsedTime += Time.deltaTime;
+
+        if(staminaState == STAMINA_STATE.ReducingStamina)
+        {
+            ReduceStamina();
+            elapsedTime = 0;
+
+        } else if (staminaState == STAMINA_STATE.RegeningStamina)
+        {
+            if(elapsedTime >= staminaRegenWaitTime)
+            {
+                RegenStamina();
+            }
+        }
     }
 
     public void ReduceHealth(float damage)
@@ -47,9 +71,8 @@ public class Character : MonoBehaviour
         currentStamina = currentStamina < 0 ? 0 : currentStamina;
     }
 
-    public void RegenStamina(float elapsedTime)
+    public void RegenStamina()
     {
-        if (elapsedTime < staminaRegenWaitTime) return;
         currentStamina += staminaRegen;
         currentStamina = currentStamina > maxStamina ? maxStamina : currentStamina;
     }
