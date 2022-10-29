@@ -14,6 +14,7 @@ public class CharacterMovement : MonoBehaviour
     private float vertical;
     private Vector3 mousePos;
     private const float angleOffsetInDeg = 90f;
+    private float elapsedTime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,8 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        elapsedTime += Time.deltaTime;
+
         // get mouse position for player rotation
         mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
@@ -32,15 +35,16 @@ public class CharacterMovement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        if (Input.GetKey(KeyCode.LeftShift) && character.maxStamina > 0)
+        if (Input.GetKey(KeyCode.LeftShift) && character.currentStamina > 0)
         {
             characterController.SimpleMove(new Vector3(horizontal, 0, vertical) * runningSpeed);
             character.ReduceStamina();
+            elapsedTime = 0;
         }
         else
         {
             characterController.SimpleMove(new Vector3(horizontal, 0, vertical) * walkingSpeed);
-            character.RegenStamina();
+            character.RegenStamina(elapsedTime);
         }
         #endregion
     }

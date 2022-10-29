@@ -14,10 +14,11 @@ public class Character : MonoBehaviour
 
     public float staminaReduction = 1f;
     public float staminaRegen = 1f;
+    public float staminaRegenWaitTime = 4f;
 
     private float currentHealth;
-    public float currentStamina;
-    
+    public float currentStamina; // TODO: change to private 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,6 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void ReduceHealth(float damage)
@@ -47,8 +47,9 @@ public class Character : MonoBehaviour
         currentStamina = currentStamina < 0 ? 0 : currentStamina;
     }
 
-    public void RegenStamina()
+    public void RegenStamina(float elapsedTime)
     {
+        if (elapsedTime < staminaRegenWaitTime) return;
         currentStamina += staminaRegen;
         currentStamina = currentStamina > maxStamina ? maxStamina : currentStamina;
     }
