@@ -48,6 +48,7 @@ public class Character : MonoBehaviour
 
         } else if (staminaState == STAMINA_STATE.RegeningStamina)
         {
+            // wait x seconds before beginning to regen stamina
             if(elapsedTime >= staminaRegenWaitTime)
             {
                 RegenStamina();

@@ -32,6 +32,7 @@ public class CharacterMovement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
+        // states are updated here. Based on the state, the functionality is handled by Character class
         if (Input.GetKey(KeyCode.LeftShift) && character.currentStamina > 0)
         {
             characterController.SimpleMove(new Vector3(horizontal, 0, vertical) * runningSpeed);
