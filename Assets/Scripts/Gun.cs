@@ -8,20 +8,25 @@ public class Gun : MonoBehaviour
     public Transform gunTip;
     public GameObject bulletPrefab;
     public float bulletForce = 10f;
+    public float timeBetweenFire = .5f;     // wait time before firing the next bullet
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float elapsedTime = 0;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        elapsedTime += Time.deltaTime;
+
+        // player can only fire bullet once the timer has exceeded the wait time
+        if(elapsedTime >= timeBetweenFire)
         {
-            Shoot();
+            if (Input.GetMouseButton(0))
+            {
+                Shoot();
+                elapsedTime = 0;
+            }
         }
+        
     }
 
     private void Shoot()
