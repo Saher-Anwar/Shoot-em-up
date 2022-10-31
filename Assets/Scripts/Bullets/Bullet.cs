@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        if (collision.gameObject.tag.Equals("Enemey"))
+        if (collision.gameObject.tag.Equals("Enemy"))
         {
             // reduce enemy's health if they get hit by the bullet
             // collision.GetComponent<EnemyAI>().ReduceHealth(damage);
@@ -28,11 +28,16 @@ public class Bullet : MonoBehaviour
 
         if(hitEffect != null)
         {
-            Instantiate(hitEffect, transform.position, Quaternion.identity);
-            Destroy(hitEffect, 5f); // TODO: adjust this value to the length of the hit particle effect 
+            PlayEffects();
         }
-        
+
         Destroy(gameObject);
+    }
+
+    private void PlayEffects()
+    {
+        Instantiate(hitEffect, transform.position, Quaternion.identity);
+        Destroy(hitEffect, 5f); // TODO: adjust this value to the length of the hit particle effect 
     }
 
     IEnumerator DestroyBullet()

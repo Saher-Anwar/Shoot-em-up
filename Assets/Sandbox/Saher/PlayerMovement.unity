@@ -435,6 +435,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4222324532081737253, guid: 1ea437b65473a1a4eb3e54a3624e793f,
     type: 3}
   bulletForce: 10
+  timeBetweenFire: 0.5
 --- !u!1 &558987275
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +845,7 @@ GameObject:
   - component: {fileID: 2106949142}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

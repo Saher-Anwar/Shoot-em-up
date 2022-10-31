@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6194636414939292195}
   - component: {fileID: 7272230104831522431}
   - component: {fileID: 1549175162782717507}
-  - component: {fileID: -874968647892026914}
+  - component: {fileID: -4454784199280108859}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -114,9 +114,9 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &-874968647892026914
+--- !u!114 &-4454784199280108859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,4 +130,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   hitEffect: {fileID: 0}
-  destroyBulletWaitTime: 1
+  destroyBulletWaitTime: 2
