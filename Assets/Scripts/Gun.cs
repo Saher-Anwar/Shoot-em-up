@@ -32,7 +32,7 @@ public class Gun : MonoBehaviour
     private void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, gunTip.position, gunTip.rotation);
-        bullet.transform.localEulerAngles = new Vector3(90f, bullet.transform.localEulerAngles.y, bullet.transform.localEulerAngles.z);
+        bullet.transform.localEulerAngles = new Vector3(0, bullet.transform.localEulerAngles.y, bullet.transform.localEulerAngles.z);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.AddForce(gunTip.forward * bulletForce, ForceMode.Impulse);
     }
