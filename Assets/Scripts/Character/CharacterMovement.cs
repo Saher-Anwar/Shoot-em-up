@@ -15,6 +15,7 @@ public class CharacterMovement : MonoBehaviour
     private Vector3 mousePos;
     private const float angleOffsetInDeg = 90f;
 
+
     // Start is called before the first frame update
     void Start()
     {
