@@ -10,8 +10,9 @@ public class StaminaBar : MonoBehaviour
     private float dValue;
     private float stamina;
     private float maxStamina;
+    
 
-    public void setMaxStamina(int max){
+    public void setMaxStamina(float max){
         slider.maxValue = max;
         slider.value = max;
         maxStamina = max;
