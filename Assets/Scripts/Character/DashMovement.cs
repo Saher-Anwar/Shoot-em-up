@@ -21,20 +21,23 @@ public class DashMove : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         if (Input.GetButtonDown("Fire2")) //Right mouse button
         {
-            currentDashTime = 0;                
-        
-        if(currentDashTime < maxDashTime)
-        {
-            moveDirection = transform.forward * dashDistance;
-            currentDashTime += dashStoppingSpeed;
+            currentDashTime = 0;
+
+            if (currentDashTime < maxDashTime)
+            {
+                moveDirection = transform.forward * dashDistance;
+                currentDashTime += dashStoppingSpeed;
+            }
+            else
+            {
+                moveDirection = Vector3.zero;
+            }
+
+            controller.Move(moveDirection * Time.deltaTime * dashSpeed);
         }
-        else
-        {
-            moveDirection = Vector3.zero;
-        }
-        controller.Move(moveDirection * Time.deltaTime * dashSpeed);
     }
 }
