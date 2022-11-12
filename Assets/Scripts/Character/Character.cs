@@ -21,6 +21,9 @@ public class Character : MonoBehaviour
     public STAMINA_STATE staminaState;
     private float elapsedTime = 0;
 
+    public HealthBar healthBar;
+    public StaminaBar staminaBar;
+    
     public enum STAMINA_STATE
     {
         ReducingStamina,
@@ -34,11 +37,14 @@ public class Character : MonoBehaviour
         currentHealth = maxHealth;
         currentStamina = maxStamina;
         staminaState = STAMINA_STATE.StandBy;
+        healthBar.setMaxHealth(maxHealth);
+        staminaBar.setMaxStamina(maxStamina);
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         elapsedTime += Time.deltaTime;
 
         if(staminaState == STAMINA_STATE.ReducingStamina)
@@ -54,14 +60,24 @@ public class Character : MonoBehaviour
                 RegenStamina();
             }
         }
+        */
+
+        //Decreasing stamina if shift is pressed
+        if(Input.GetKeyDown(KeyCode.LeftShift)){
+            staminaBar.decreaseStamina();
+        }
+        else{
+            staminaBar.increaseStamina();
+        }
     }
 
     public void ReduceHealth(float damage)
     {
         currentHealth -= (damage - defence);
+        healthBar.setHealth(currentHealth);
     }
 
-    public void ReduceStamina(float staminaReduction)
+    /*public void ReduceStamina(float staminaReduction)
     {
         currentStamina -= staminaReduction;
     }
@@ -76,5 +92,5 @@ public class Character : MonoBehaviour
     {
         currentStamina += staminaRegen;
         currentStamina = currentStamina > maxStamina ? maxStamina : currentStamina;
-    }
+    }*/
 }
