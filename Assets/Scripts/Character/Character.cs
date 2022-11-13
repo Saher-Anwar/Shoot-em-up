@@ -44,31 +44,25 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
+
         elapsedTime += Time.deltaTime;
 
-        if(staminaState == STAMINA_STATE.ReducingStamina)
+        if (staminaState == STAMINA_STATE.ReducingStamina)
         {
             ReduceStamina();
             elapsedTime = 0;
 
-        } else if (staminaState == STAMINA_STATE.RegeningStamina)
+        }
+        else if (staminaState == STAMINA_STATE.RegeningStamina)
         {
             // wait x seconds before beginning to regen stamina
-            if(elapsedTime >= staminaRegenWaitTime)
+            if (elapsedTime >= staminaRegenWaitTime)
             {
                 RegenStamina();
             }
         }
-        */
 
-        //Decreasing stamina if shift is pressed
-        if(Input.GetKeyDown(KeyCode.LeftShift)){
-            staminaBar.decreaseStamina();
-        }
-        else{
-            staminaBar.increaseStamina();
-        }
+
     }
 
     public void ReduceHealth(float damage)
@@ -77,20 +71,23 @@ public class Character : MonoBehaviour
         healthBar.setHealth(currentHealth);
     }
 
-    /*public void ReduceStamina(float staminaReduction)
+    public void ReduceStamina(float staminaReduction)
     {
         currentStamina -= staminaReduction;
+        staminaBar.SetCurrentStamina(currentStamina);
     }
 
     public void ReduceStamina()
     {
         currentStamina -= staminaReduction;
         currentStamina = currentStamina < 0 ? 0 : currentStamina;
+        staminaBar.SetCurrentStamina(currentStamina);
     }
 
     public void RegenStamina()
     {
         currentStamina += staminaRegen;
         currentStamina = currentStamina > maxStamina ? maxStamina : currentStamina;
-    }*/
+        staminaBar.SetCurrentStamina(currentStamina);
+    }
 }

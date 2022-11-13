@@ -17,20 +17,24 @@ public class StaminaBar : MonoBehaviour
         slider.value = max;
         maxStamina = max;
         stamina = max;
-        
+    }
 
+    public void SetCurrentStamina(float stamina)
+    {
+        slider.value = stamina;
     }
-    public void decreaseStamina(){
-        if(stamina != 0){
-            stamina -= dValue * Time.deltaTime;
-            slider.value = stamina;
-        }
-    }
-    public void increaseStamina(){
-        if(stamina != maxStamina){
-            stamina += dValue * Time.deltaTime;
-            slider.value = stamina;
-        }
-    }
+
+    //public void decreaseStamina(){
+    //    if(stamina != 0){
+    //        stamina -= dValue * Time.deltaTime;
+    //        slider.value = stamina;
+    //    }
+    //}
+    //public void increaseStamina(){
+    //    if(stamina != maxStamina){
+    //        stamina += dValue * Time.deltaTime;
+    //        slider.value = stamina;
+    //    }
+    //}
     
 }
