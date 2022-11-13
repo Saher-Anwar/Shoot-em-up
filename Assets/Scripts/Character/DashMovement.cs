@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DashMove : MonoBehaviour {
+public class DashMovement : MonoBehaviour {
 
     public Vector3 moveDirection;
 
@@ -12,8 +12,6 @@ public class DashMove : MonoBehaviour {
     float currentDashTime = maxDashTime;
     float dashSpeed = 6;
     CharacterController controller;
-
-
 
     private void Awake()
     {
