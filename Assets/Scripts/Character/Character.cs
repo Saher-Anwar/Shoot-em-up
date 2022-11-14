@@ -92,11 +92,12 @@ public class Character : MonoBehaviour
         staminaBar.SetCurrentStamina(currentStamina);
     }
 
-    void OnTriggerEnter(Collider collider)
+    void OnCollisionStay(Collision collision)
     {
-        if (collider.gameObject.tag == "Enemy")
+        //Check for a match with the specified name on any GameObject that collides with your GameObject
+        if (collision.gameObject.tag == "Enemy")
         {
-            Destroy(collider);
+            ReduceHealth(collision.gameObject.GetComponent<Enemy>().enemyDamage);
         }
     }
 }
