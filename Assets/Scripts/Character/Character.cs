@@ -16,7 +16,7 @@ public class Character : MonoBehaviour
     public float staminaRegen = 1f;
     public float staminaRegenWaitTime = 4f;
 
-    private float currentHealth;
+    public float currentHealth;
     public float currentStamina; // TODO: change to private 
     public STAMINA_STATE staminaState;
     private float elapsedTime = 0;
@@ -41,20 +41,21 @@ public class Character : MonoBehaviour
     {
         elapsedTime += Time.deltaTime;
 
-        if(staminaState == STAMINA_STATE.ReducingStamina)
-        {
+        if(staminaState == STAMINA_STATE.ReducingStamina){
             ReduceStamina();
             elapsedTime = 0;
 
-        } else if (staminaState == STAMINA_STATE.RegeningStamina)
-        {
+        } 
+        else if (staminaState == STAMINA_STATE.RegeningStamina){
             // wait x seconds before beginning to regen stamina
             if(elapsedTime >= staminaRegenWaitTime)
             {
                 RegenStamina();
             }
         }
+
     }
+
 
     public void ReduceHealth(float damage)
     {
@@ -76,5 +77,13 @@ public class Character : MonoBehaviour
     {
         currentStamina += staminaRegen;
         currentStamina = currentStamina > maxStamina ? maxStamina : currentStamina;
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.tag == "Enemy")
+        {
+            Destroy(collider);
+        }
     }
 }
