@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 
 public class CharacterMovement : MonoBehaviour
 {
     public float walkingSpeed = 4f;
     public float runningSpeed = 6f;
+    public float dashDistance = 3f;
 
     private CharacterController characterController;
     private Character character;

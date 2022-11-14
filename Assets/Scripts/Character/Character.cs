@@ -21,6 +21,9 @@ public class Character : MonoBehaviour
     public STAMINA_STATE staminaState;
     private float elapsedTime = 0;
 
+    public HealthBar healthBar;
+    public StaminaBar staminaBar;
+    
     public enum STAMINA_STATE
     {
         ReducingStamina,
@@ -34,21 +37,27 @@ public class Character : MonoBehaviour
         currentHealth = maxHealth;
         currentStamina = maxStamina;
         staminaState = STAMINA_STATE.StandBy;
+        healthBar.setMaxHealth(maxHealth);
+        staminaBar.setMaxStamina(maxStamina);
     }
 
     // Update is called once per frame
     void Update()
     {
+
         elapsedTime += Time.deltaTime;
 
-        if(staminaState == STAMINA_STATE.ReducingStamina){
+
+        if (staminaState == STAMINA_STATE.ReducingStamina)
+        {
             ReduceStamina();
             elapsedTime = 0;
 
-        } 
-        else if (staminaState == STAMINA_STATE.RegeningStamina){
+        }
+        else if (staminaState == STAMINA_STATE.RegeningStamina)
+        {
             // wait x seconds before beginning to regen stamina
-            if(elapsedTime >= staminaRegenWaitTime)
+            if (elapsedTime >= staminaRegenWaitTime)
             {
                 RegenStamina();
             }
@@ -60,23 +69,27 @@ public class Character : MonoBehaviour
     public void ReduceHealth(float damage)
     {
         currentHealth -= (damage - defence);
+        healthBar.setHealth(currentHealth);
     }
 
     public void ReduceStamina(float staminaReduction)
     {
         currentStamina -= staminaReduction;
+        staminaBar.SetCurrentStamina(currentStamina);
     }
 
     public void ReduceStamina()
     {
         currentStamina -= staminaReduction;
         currentStamina = currentStamina < 0 ? 0 : currentStamina;
+        staminaBar.SetCurrentStamina(currentStamina);
     }
 
     public void RegenStamina()
     {
         currentStamina += staminaRegen;
         currentStamina = currentStamina > maxStamina ? maxStamina : currentStamina;
+        staminaBar.SetCurrentStamina(currentStamina);
     }
 
     void OnTriggerEnter(Collider collider)
