@@ -6,7 +6,7 @@ public class CameraScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public float followSpeed = 10f;
+    public float followSpeed = 1000000f;
 
     private Transform player;
 
@@ -22,7 +22,7 @@ public class CameraScript : MonoBehaviour
     {
         if (player)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.position + pos, followSpeed*Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, player.position + pos, followSpeed);
         }
     }
 }
