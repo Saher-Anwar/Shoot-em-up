@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Bullet
   - Ground
+  - Enemy
+  - healthPotion
+  - heartItem
   layers:
   - Default
   - TransparentFX

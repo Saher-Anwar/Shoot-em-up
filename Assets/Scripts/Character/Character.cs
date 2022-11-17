@@ -65,6 +65,22 @@ public class Character : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("heartItem"))
+        {
+            Destroy(other.gameObject);
+            Debug.Log("heart collider");
+            AddHealth(20.0f);
+        }
+        if (other.gameObject.CompareTag("staminaItem"))
+        {
+            Destroy(other.gameObject);
+            Debug.Log("stamina collider");
+            AddStamina(20.0f);
+        }
+    }
+
     public void ReduceHealth(float damage)
     {
         currentHealth -= (damage - defence);
@@ -95,11 +111,15 @@ public class Character : MonoBehaviour
     {
         // if currentHealth + healthIncrease is more than maxhealth, then current health becomes maxHealt; otherwise, currenthealth = currentHealth + healthIncrease 
         currentHealth = (currentHealth + healthIncrease) > maxHealth ? maxHealth : currentHealth + healthIncrease;
+        healthBar.setHealth(currentHealth);
     }
 
     public void AddStamina(float staminaIncrease)
     {
         // if currentStamina + staminaIncrease is more than maxStamina, then currentStamina becomes maxStamina; otherwise, currenthealth = currentStamina + staminaIncrease
         currentStamina = (currentStamina + staminaIncrease) > maxStamina ? maxStamina : currentStamina + staminaIncrease;
+        staminaBar.SetCurrentStamina(currentStamina);
     }
+
+    
 }
