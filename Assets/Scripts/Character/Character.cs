@@ -90,4 +90,16 @@ public class Character : MonoBehaviour
         currentStamina = currentStamina > maxStamina ? maxStamina : currentStamina;
         staminaBar.SetCurrentStamina(currentStamina);
     }
+
+    public void AddHealth(float healthIncrease)
+    {
+        // if currentHealth + healthIncrease is more than maxhealth, then current health becomes maxHealt; otherwise, currenthealth = currentHealth + healthIncrease 
+        currentHealth = (currentHealth + healthIncrease) > maxHealth ? maxHealth : currentHealth + healthIncrease;
+    }
+
+    public void AddStamina(float staminaIncrease)
+    {
+        // if currentStamina + staminaIncrease is more than maxStamina, then currentStamina becomes maxStamina; otherwise, currenthealth = currentStamina + staminaIncrease
+        currentStamina = (currentStamina + staminaIncrease) > maxStamina ? maxStamina : currentStamina + staminaIncrease;
+    }
 }
