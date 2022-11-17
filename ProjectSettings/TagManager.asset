@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - healthPotion
   - heartItem
+  - staminaItem
   layers:
   - Default
   - TransparentFX
