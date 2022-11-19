@@ -18,12 +18,24 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemyHealth <= 0)
-            Destroy(gameObject);
     }
 
     public void ReduceHealth(float damage)
     {
         enemyHealth -= damage;
+
+        if(enemyHealth <= 0)
+        {
+            EnemyDeath();
+        }
+    }
+
+    public void EnemyDeath()
+    {
+        // increase kill count
+        // play sound effect
+        // player particle effect
+
+        Destroy(gameObject);
     }
 }
