@@ -1006,6 +1006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1806690776}
+  spawnInterval: 2
   player: {fileID: 1816413702}
   spawnRange: 5
   spawnMask:
@@ -1036,6 +1037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1254336208}
   - component: {fileID: 1254336209}
+  - component: {fileID: 1254336210}
   m_Layer: 3
   m_Name: SpawnPoint1
   m_TagString: Untagged
@@ -1071,6 +1073,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1254336210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254336207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef7094bbeb686141997f06500e19fd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 1
 --- !u!1001 &1297895997
 PrefabInstance:
   m_ObjectHideFlags: 0

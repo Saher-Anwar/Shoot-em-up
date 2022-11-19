@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
+    // Declaring required variables
     [SerializeField]
-    private GameObject enemyPrefab;
-    private float spawnInterval = 2f;
+    private GameObject enemyPrefab;     // Enemy model to clone
+    [SerializeField]
+    private float spawnInterval = 2f;   // Interval between each spawn
 
-    public Character player;
-    public float spawnRange = 25f;
-    public LayerMask spawnMask;
+    public Character player;            // To use player position when casting sphere
+    public float spawnRange = 25f;      // Radius of the sphere
+    public LayerMask spawnMask;         // Layer of the spawnpoints
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +23,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Checking all collisions with spawn points and saving in array
         Collider[] contactPoints = Physics.OverlapSphere(player.transform.position, spawnRange, spawnMask);
         foreach (var contactPoint in contactPoints)
         {
-            Spawn(contactPoint.transform);
+            Spawn(contactPoint.transform);  // Spawning for each collision
         }
     }
 
@@ -35,7 +37,7 @@ public class GameManager : MonoBehaviour
         spawnInterval -= Time.deltaTime;
         if (spawnInterval <= 0)
         {
-            Instantiate(enemyPrefab, spawnLocation);
+            Instantiate(enemyPrefab, spawnLocation.position, spawnLocation.rotation);
             spawnInterval = 2f;
         }
     }
