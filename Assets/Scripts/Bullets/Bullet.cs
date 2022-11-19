@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float damage = 5f;
+    public float damage;
     public GameObject hitEffect;
-    public float destroyBulletWaitTime = 5f;
+    public float destroyBulletWaitTime;
 
     private void Start()
     {
@@ -23,10 +23,10 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag.Equals("Enemy"))
         {
             // reduce enemy's health if they get hit by the bullet
-            // collision.GetComponent<EnemyAI>().ReduceHealth(damage);
+            collision.gameObject.GetComponent<Enemy>().ReduceHealth(damage);
         }
 
-        if(hitEffect != null)
+        if (hitEffect != null)
         {
             PlayEffects();
         }
