@@ -28,8 +28,9 @@ public class Enemy : MonoBehaviour
 
         if (enemyHealth <= 0)
         {
-            EnemyDeath();
             animator.SetBool("Death", true);
+            Debug.Log($"Death animation length: {animator.GetCurrentAnimatorStateInfo(0).length}");
+            StartCoroutine(EnemyDeath(animator.GetCurrentAnimatorStateInfo(0).length));
         }
         else
         {
@@ -37,12 +38,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void EnemyDeath()
+    IEnumerator EnemyDeath(float seconds)
     {
         // increase kill count
         // play sound effect
         // player particle effect
-
+        yield return new WaitForSeconds(seconds);
+        Debug.Log("Enemy should die");
         Destroy(gameObject);
     }
 }
