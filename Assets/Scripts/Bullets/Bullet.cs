@@ -24,6 +24,7 @@ public class Bullet : MonoBehaviour
         {
             // reduce enemy's health if they get hit by the bullet
             collision.gameObject.GetComponent<Enemy>().ReduceHealth(damage);
+            Debug.Log("Hit enemy");
         }
 
         if (hitEffect != null)
