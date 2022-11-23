@@ -8,11 +8,12 @@ public class Enemy : MonoBehaviour
     public float enemyHealth;
     public float enemyDamage;
     public float enemySize;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,6 +29,11 @@ public class Enemy : MonoBehaviour
         if (enemyHealth <= 0)
         {
             EnemyDeath();
+            animator.SetBool("Death", true);
+        }
+        else
+        {
+            animator.SetBool("Death", false);
         }
     }
 

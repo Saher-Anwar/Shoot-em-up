@@ -13,6 +13,10 @@ public class EnemyMovement : MonoBehaviour
     public float detectionRange = 10f;
     Transform target;
     NavMeshAgent agent;
+    Animator animator;
+
+    [SerializeField]
+    private float detectDistance = 2.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +24,7 @@ public class EnemyMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         target = EnemyTarget.instance.target.transform;
         enemyControl = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
 
         // Code will slow down game if scene contains many objects.
         // playerControl = FindObjectOfType<Character>();
@@ -28,15 +33,22 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float detectDistance = Vector3.Distance(target.position, transform.forward);
+        detectDistance = Vector3.Distance(target.position, transform.position);
         if (detectDistance <= detectionRange) {
             agent.SetDestination(target.position);
+            animator.SetBool("Run",true);
             if (detectDistance <= agent.stoppingDistance) {
                 transform.LookAt(playerControl.transform.position);
+                animator.SetBool("Attack", true);
             }
-            // Now using NavMesh
-            
-            //enemyControl.Move(transform.forward * enemySpeed);
+            else
+            {
+                animator.SetBool("Attack", false);
+            }
+        }
+        else
+        {
+            animator.SetBool("Run", false);
         }
     }
 
