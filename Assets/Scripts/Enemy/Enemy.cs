@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // DoDamage();
     }
 
     public void ReduceHealth(float damage)
@@ -35,6 +37,18 @@ public class Enemy : MonoBehaviour
         else
         {
             animator.SetBool("Death", false);
+        }
+    }
+
+
+    public void DoDamage()
+    {
+        GameObject player = gameObject.GetComponent<EnemyTarget>().target;
+        float distanceToDoDamage = gameObject.GetComponent<NavMeshAgent>().stoppingDistance;
+
+        if (Vector3.Distance(player.transform.position, gameObject.transform.position) <= distanceToDoDamage)
+        {
+            player.GetComponent<Character>().ReduceHealth(enemyDamage);
         }
     }
 
