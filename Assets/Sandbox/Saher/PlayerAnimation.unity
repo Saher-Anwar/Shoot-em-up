@@ -135,6 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4817a553abc897740a87465340481d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &329633323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 816227186351161938, guid: 2faca2d83798edd41bb825deda37b84f,
+    type: 3}
+  m_PrefabInstance: {fileID: 816227186609458297}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &384387182
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +256,18 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!114 &471674967 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 816227186272025646, guid: 2faca2d83798edd41bb825deda37b84f,
+    type: 3}
+  m_PrefabInstance: {fileID: 816227186609458297}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329633323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446d1c36fd9a93d47b3333c93436f11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &508010352 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8355691386958475604, guid: df2d22ca89bb83f48942de4bb93a672f,
@@ -402,12 +420,12 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 329633323}
     - target: {fileID: 8704079417743709204, guid: f73b54b64a3769a418b5846a3d37ed91,
         type: 3}
       propertyPath: playerControl
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 471674967}
     - target: {fileID: 8704079417743709291, guid: f73b54b64a3769a418b5846a3d37ed91,
         type: 3}
       propertyPath: m_Name
