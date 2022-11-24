@@ -81,17 +81,6 @@ public class Character : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        {
-            //Check for a match with the specified name on any GameObject that collides with your GameObject
-            if (collision.gameObject.tag == "Enemy")
-            {
-                ReduceHealth(collision.gameObject.GetComponent<Enemy>().enemyDamage);
-            }
-        }
-    }
-
     public void ReduceHealth(float damage)
     {
         currentHealth -= (damage - defence);
