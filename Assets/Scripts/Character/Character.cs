@@ -23,7 +23,7 @@ public class Character : MonoBehaviour
 
     public HealthBar healthBar;
     public StaminaBar staminaBar;
-    
+
     public enum STAMINA_STATE
     {
         ReducingStamina,
@@ -121,5 +121,5 @@ public class Character : MonoBehaviour
         staminaBar.SetCurrentStamina(currentStamina);
     }
 
-    
+
 }
