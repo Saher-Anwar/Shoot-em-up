@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
@@ -9,6 +10,8 @@ public class Enemy : MonoBehaviour
     public float enemyHealth;
     public float enemyDamage;
     public float enemySize;
+    public int kills;
+    [SerializeField] Text killCountText;
     Animator animator;
 
     // Start is called before the first frame update
@@ -57,6 +60,8 @@ public class Enemy : MonoBehaviour
         // increase kill count
         // play sound effect
         // player particle effect
+        kills++;
+        killCountText.text = ""+kills;
         yield return new WaitForSeconds(seconds);
         Debug.Log("Enemy should die");
         Destroy(gameObject);
