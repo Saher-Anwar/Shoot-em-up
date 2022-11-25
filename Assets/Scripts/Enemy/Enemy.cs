@@ -64,6 +64,7 @@ public class Enemy : MonoBehaviour
         killCountText.text = ""+kills;
         yield return new WaitForSeconds(seconds);
         Debug.Log("Enemy should die");
+
         Destroy(gameObject);
     }
 }
