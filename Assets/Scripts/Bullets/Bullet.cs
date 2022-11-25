@@ -15,11 +15,13 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        /*
+         * This causes issues for multi bullet guns
         if (collision.gameObject.tag.Equals("Bullet"))
         {
             return;
         }
-
+        */
         if (collision.gameObject.tag.Equals("Enemy"))
         {
             // reduce enemy's health if they get hit by the bullet

@@ -23,7 +23,7 @@ public class CharacterMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         character = GetComponent<Character>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class CharacterMovement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        animator.SetFloat("Speed", Mathf.Abs(horizontal) + Mathf.Abs(vertical));
+        //animator.SetFloat("Speed", Mathf.Abs(horizontal) + Mathf.Abs(vertical));
 
         // states are updated here. Based on the state, the functionality is handled by Character class
         if (Input.GetKey(KeyCode.LeftShift) && character.currentStamina > 0)

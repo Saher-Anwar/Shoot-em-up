@@ -30,13 +30,13 @@ public class Enemy : MonoBehaviour
 
         if (enemyHealth <= 0)
         {
-            animator.SetBool("Death", true);
-            Debug.Log($"Death animation length: {animator.GetCurrentAnimatorStateInfo(0).length}");
-            StartCoroutine(EnemyDeath(animator.GetCurrentAnimatorStateInfo(0).length));
+            //animator.SetBool("Death", true);
+            //Debug.Log($"Death animation length: {animator.GetCurrentAnimatorStateInfo(0).length}");
+            //StartCoroutine(EnemyDeath(animator.GetCurrentAnimatorStateInfo(0).length));
         }
         else
         {
-            animator.SetBool("Death", false);
+            //animator.SetBool("Death", false);
         }
     }
 
