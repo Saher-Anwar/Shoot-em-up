@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BaseScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Sandbox/Hesham/Desert.unity
+    guid: 775dc05d22f28784188c27b56cecec03
+  - enabled: 1
+    path: Assets/Sandbox/Hesham/LoseScreen.unity
+    guid: 768e12884e6d5ba40883bdc06b72058f
   m_configObjects: {}
