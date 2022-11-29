@@ -56,7 +56,7 @@ public class CharacterMovement : MonoBehaviour
         {
             characterController.SimpleMove(new Vector3(horizontal, 0, vertical) * walkingSpeed);
             character.staminaState = Character.STAMINA_STATE.RegeningStamina;
-            if (!audio.isPlaying)
+            if (!audio.isPlaying && Mathf.Abs(horizontal) + Mathf.Abs(vertical) > 0.01)
             {
                 audio.clip = walkingAudioClip;
                 audio.PlayOneShot(audio.clip);
