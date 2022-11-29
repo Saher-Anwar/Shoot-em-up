@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,11 +14,13 @@ public class GameManager : MonoBehaviour
     public Character player;            // To use player position when casting sphere
     public float spawnRange = 25f;      // Radius of the sphere
     public LayerMask spawnMask;         // Layer of the spawnpoints
+    public float enemiesKilled;
+    public Text killCountText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemiesKilled = 0;
     }
 
     // Update is called once per frame
@@ -49,4 +52,9 @@ public class GameManager : MonoBehaviour
         Gizmos.DrawWireSphere(player.transform.position, spawnRange);
     }
 
+    public void IncreaseKillCount()
+    {
+        enemiesKilled++;
+        killCountText.text = enemiesKilled.ToString();
+    }
 }

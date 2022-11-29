@@ -10,14 +10,16 @@ public class Enemy : MonoBehaviour
     public float enemyHealth;
     public float enemyDamage;
     public float enemySize;
-    public int kills;
-    [SerializeField] Text killCountText;
     Animator animator;
+
+    private GameManager gameManager;
+    private bool isEnemyDeathCalled = false;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -29,13 +31,12 @@ public class Enemy : MonoBehaviour
     public void ReduceHealth(float damage)
     {
         enemyHealth -= damage;
-        Debug.Log($"Enemy health {enemyHealth}");
 
         if (enemyHealth <= 0)
         {
             animator.SetBool("Death", true);
-            Debug.Log($"Death animation length: {animator.GetCurrentAnimatorStateInfo(0).length}");
             StartCoroutine(EnemyDeath(animator.GetCurrentAnimatorStateInfo(0).length));
+            isEnemyDeathCalled = true; // bool to avoid calling this method more than ocne
         }
         else
         {
@@ -57,14 +58,26 @@ public class Enemy : MonoBehaviour
 
     IEnumerator EnemyDeath(float seconds)
     {
-        // increase kill count
-        // play sound effect
-        // player particle effect
-        kills++;
-        killCountText.text = ""+kills;
-        yield return new WaitForSeconds(seconds);
-        Debug.Log("Enemy should die");
+        if (!isEnemyDeathCalled)
+        {
+            Debug.Log("Enemy dead");
+            // increase kill count
+            gameManager.IncreaseKillCount();
 
-        Destroy(gameObject);
+
+            // play sound effect
+            // player particle effect
+
+            gameObject.GetComponent<EnemyMovement>().enabled = false;
+            yield return new WaitForSeconds(seconds + 1f);
+
+            Destroy(gameObject);
+        }
+        else
+        {
+            yield return null;
+        }
+
+
     }
 }
