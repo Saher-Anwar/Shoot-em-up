@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyControl: {fileID: 4958888793293657698}
   playerControl: {fileID: 0}
-  detectionRange: 80
+  detectionRange: 35
   detectDistance: 2.5
 --- !u!114 &4958888793293657700
 MonoBehaviour:
