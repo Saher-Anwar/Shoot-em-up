@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour
     public float spawnRange = 25f;      // Radius of the sphere
     public LayerMask spawnMask;         // Layer of the spawnpoints
     public float enemiesKilled;
-    public Text killCountText;
+    public TextMeshProUGUI killCountText;
 
     // Start is called before the first frame update
     void Start()

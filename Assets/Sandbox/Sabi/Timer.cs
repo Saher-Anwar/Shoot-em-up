@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
     [Header("Component")]
-    public Text timerText;
+    public TextMeshProUGUI timerText;
     [Header("Timer Settings")]
     public float currentTime;
     public bool countDown;

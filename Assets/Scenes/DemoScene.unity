@@ -123,18 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 59aa634de8ae31446b10152ac9814ddd, type: 2}
---- !u!114 &80979458 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6005090291524862447, guid: 8e83ad4297268db4e8dacb445eb055cc,
-    type: 3}
-  m_PrefabInstance: {fileID: 2129494864}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &144558362 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6005090291262434306, guid: 8e83ad4297268db4e8dacb445eb055cc,
@@ -145,6 +133,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4817a553abc897740a87465340481d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &424182055 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 424182055, guid: 8e83ad4297268db4e8dacb445eb055cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2129494864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &547822104
@@ -271,7 +271,7 @@ PrefabInstance:
         type: 3}
       propertyPath: timerText
       value: 
-      objectReference: {fileID: 1487626223}
+      objectReference: {fileID: 424182055}
     - target: {fileID: 2069086232667655936, guid: 2de5c022ca69c77418af9383e37e1bbf,
         type: 3}
       propertyPath: currentTime
@@ -376,7 +376,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   enemiesKilled: 0
-  killCountText: {fileID: 80979458}
+  killCountText: {fileID: 1395824482}
 --- !u!4 &672419350
 Transform:
   m_ObjectHideFlags: 0
@@ -937,16 +937,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d47225da1dab0ea4b8b30eaf184d0176, type: 3}
---- !u!114 &1487626223 stripped
+--- !u!114 &1395824482 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6005090291197325402, guid: 8e83ad4297268db4e8dacb445eb055cc,
+  m_CorrespondingSourceObject: {fileID: 1395824482, guid: 8e83ad4297268db4e8dacb445eb055cc,
     type: 3}
   m_PrefabInstance: {fileID: 2129494864}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1817251473
@@ -1226,16 +1226,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6005090290471302527, guid: 8e83ad4297268db4e8dacb445eb055cc,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 101.047485
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005090290471302527, guid: 8e83ad4297268db4e8dacb445eb055cc,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -55.30005
-      objectReference: {fileID: 0}
     - target: {fileID: 6005090290778645011, guid: 8e83ad4297268db4e8dacb445eb055cc,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1245,21 +1235,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005090291140940092, guid: 8e83ad4297268db4e8dacb445eb055cc,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 724
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005090291140940092, guid: 8e83ad4297268db4e8dacb445eb055cc,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 190
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005090291197325380, guid: 8e83ad4297268db4e8dacb445eb055cc,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -14.699951
       objectReference: {fileID: 0}
     - target: {fileID: 6005090291526358672, guid: 8e83ad4297268db4e8dacb445eb055cc,
         type: 3}
