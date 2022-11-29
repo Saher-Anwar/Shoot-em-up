@@ -40,7 +40,6 @@ public class EnemyMovement : MonoBehaviour
             if (detectDistance <= agent.stoppingDistance) {
                 transform.LookAt(playerControl.transform.position);
                 animator.SetBool("Attack", true);
-                GetComponent<Enemy>().DoDamage();
             }
             else
             {
