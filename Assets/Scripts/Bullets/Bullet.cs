@@ -39,8 +39,9 @@ public class Bullet : MonoBehaviour
 
     private void PlayEffects()
     {
-        Instantiate(hitEffect, transform.position, Quaternion.identity);
-        Destroy(hitEffect, 5f); // TODO: adjust this value to the length of the hit particle effect 
+        GameObject particleEffect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+        particleEffect.transform.parent = null;
+        //Destroy(hitEffect); // TODO: adjust this value to the length of the hit particle effect 
     }
 
     IEnumerator DestroyBullet()
