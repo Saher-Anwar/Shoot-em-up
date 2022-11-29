@@ -23,7 +23,6 @@ public class CharacterMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         character = GetComponent<Character>();
-        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
