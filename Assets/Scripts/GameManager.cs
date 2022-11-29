@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         Collider[] contactPoints = Physics.OverlapSphere(player.transform.position, spawnRange, spawnMask);
         foreach (var contactPoint in contactPoints)
         {
-            Spawn(contactPoint.transform);  // Spawning for each collision
+            Spawn(contactPoint?.transform);  // Spawning for each collision
         }
     }
 
