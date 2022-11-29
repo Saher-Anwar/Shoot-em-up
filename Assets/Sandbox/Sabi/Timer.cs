@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class Timer : MonoBehaviour
@@ -30,5 +31,9 @@ public class Timer : MonoBehaviour
             currentTime += Time.deltaTime;
         }
         timerText.text = currentTime.ToString("0.0");
+        if (currentTime > 10)
+        {
+            SceneManager.LoadScene("WinScreen");
+        }
     }
 }

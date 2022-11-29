@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * Note: Number of enemies killed should be tracked by the game manager 
@@ -85,6 +86,10 @@ public class Character : MonoBehaviour
     {
         currentHealth -= (damage - defence);
         healthBar.setHealth(currentHealth);
+        if(currentHealth <= 0)
+        {
+            SceneManager.LoadScene("LoseScreen");
+        }
     }
 
     public void ReduceStamina(float staminaReduction)
