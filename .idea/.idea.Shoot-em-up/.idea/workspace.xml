@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8a7c7598-d197-4d79-b549-08e91f974893" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shoot-em-up/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shoot-em-up/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gun and Bullets/Gun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gun and Bullets/Gun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DemoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DemoScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +19,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Sandbox/Aref/MusicControlScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/aref/Desktop/GameDev/Fin/Shoot-em-up/Assets/Scenes/DemoScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/aref/Desktop/GameDev/Fin/Shoot-em-up/Assets/Scenes/DemoScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/DashMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@1.17.2/Editor/PlasticSCM/PlasticWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../ThirdPersonMovement.cs" root0="SKIP_HIGHLIGHTING" />
@@ -85,7 +87,7 @@
       <workItem from="1668192758162" duration="6394000" />
       <workItem from="1668876768612" duration="1057000" />
       <workItem from="1669581796279" duration="940000" />
-      <workItem from="1669673727508" duration="5256000" />
+      <workItem from="1669673727508" duration="6051000" />
     </task>
     <servers />
   </component>
