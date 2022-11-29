@@ -19,6 +19,6 @@ public class RestartGame : MonoBehaviour
     //This should take the player to main menu, temporarily using desert
     public void Retry()
     {
-        SceneManager.LoadScene("Desert");
+        SceneManager.LoadScene("DemoScene");
     }
 }

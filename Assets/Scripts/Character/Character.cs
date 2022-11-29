@@ -88,7 +88,7 @@ public class Character : MonoBehaviour
         healthBar.setHealth(currentHealth);
         if(currentHealth <= 0)
         {
-            SceneManager.LoadScene("LoseScreen");
+            SceneManager.LoadScene("End");
         }
     }
 
