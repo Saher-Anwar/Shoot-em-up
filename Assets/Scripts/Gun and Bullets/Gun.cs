@@ -9,6 +9,8 @@ public class Gun : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletForce = 10f;
     public float timeBetweenFire = .5f;     // wait time before firing the next bullet
+    public GameObject muzzleFlash;
+
     private AudioSource audio;
 
     private float elapsedTime = 0;
@@ -39,6 +41,7 @@ public class Gun : MonoBehaviour
     {
         audio.PlayOneShot(audio.clip);
         GameObject bullet = Instantiate(bulletPrefab, gunTip.position, gunTip.rotation);
+        GameObject particleEffect = Instantiate(muzzleFlash, gunTip.position, Quaternion.identity);
         bullet.transform.localEulerAngles = new Vector3(0, bullet.transform.localEulerAngles.y, bullet.transform.localEulerAngles.z);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.AddForce(gunTip.forward * bulletForce, ForceMode.Impulse);
