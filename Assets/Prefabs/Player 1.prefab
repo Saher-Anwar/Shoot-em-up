@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunTip: {fileID: 1226882264056779}
-  bulletPrefab: {fileID: 4441710750599589944, guid: 5df0648bf9f7af241a2ace49f847390d,
+  bulletPrefab: {fileID: 1204636484335687523, guid: 5df0648bf9f7af241a2ace49f847390d,
     type: 3}
   bulletForce: 14
   timeBetweenFire: 0.2
