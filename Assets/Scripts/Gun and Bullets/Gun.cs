@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
     public float timeBetweenFire = .5f;     // wait time before firing the next bullet
     public GameObject muzzleFlash;
 
-    private AudioSource audio;
+    private new AudioSource audio;
 
     private float elapsedTime = 0;
 
