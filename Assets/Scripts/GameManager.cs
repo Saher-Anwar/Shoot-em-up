@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     // Enemy Spawner at set intervals
     void Spawn(Transform spawnLocation)
     {
+        if (spawnLocation == null) return;
         spawnInterval -= Time.deltaTime;
         if (spawnInterval <= 0)
         {
