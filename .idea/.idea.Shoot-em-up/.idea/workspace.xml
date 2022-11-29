@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8a7c7598-d197-4d79-b549-08e91f974893" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shoot-em-up/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shoot-em-up/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Picture1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Picture1.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +85,8 @@
       <workItem from="1667684047820" duration="5469000" />
       <workItem from="1668192758162" duration="6394000" />
       <workItem from="1668876768612" duration="1057000" />
+      <workItem from="1669581796279" duration="940000" />
+      <workItem from="1669673727508" duration="644000" />
     </task>
     <servers />
   </component>
