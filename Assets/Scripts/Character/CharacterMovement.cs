@@ -10,6 +10,8 @@ public class CharacterMovement : MonoBehaviour
     public float runningSpeed = 6f;
     public float dashDistance = 3f;
     public Animator animator;
+    public AudioClip walkingAudioClip;
+    public AudioClip runningAudioClip;
 
     private CharacterController characterController;
     private Character character;
@@ -17,12 +19,14 @@ public class CharacterMovement : MonoBehaviour
     private float vertical;
     private Vector3 mousePos;
     private const float angleOffsetInDeg = 90f;
-
+    private new AudioSource audio;
+    
     // Start is called before the first frame update
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         character = GetComponent<Character>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,11 +46,21 @@ public class CharacterMovement : MonoBehaviour
         {
             characterController.SimpleMove(new Vector3(horizontal, 0, vertical) * runningSpeed);
             character.staminaState = Character.STAMINA_STATE.ReducingStamina;
+            if (!audio.isPlaying)
+            {
+                audio.clip = runningAudioClip;
+                audio.PlayOneShot(audio.clip);
+            }
         }
         else
         {
             characterController.SimpleMove(new Vector3(horizontal, 0, vertical) * walkingSpeed);
             character.staminaState = Character.STAMINA_STATE.RegeningStamina;
+            if (!audio.isPlaying)
+            {
+                audio.clip = walkingAudioClip;
+                audio.PlayOneShot(audio.clip);
+            }
         }
         #endregion
     }
