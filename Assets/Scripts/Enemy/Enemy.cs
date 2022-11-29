@@ -11,9 +11,11 @@ public class Enemy : MonoBehaviour
     public float enemyDamage;
     public float enemySize;
     Animator animator;
+    public float hitDelay = 4f;
 
     private GameManager gameManager;
     private bool isEnemyDeathCalled = false;
+    private float elapsedTime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +54,13 @@ public class Enemy : MonoBehaviour
 
         if (Vector3.Distance(player.transform.position, gameObject.transform.position) <= distanceToDoDamage)
         {
-            player.GetComponent<Character>().ReduceHealth(enemyDamage);
+            elapsedTime += Time.deltaTime;
+
+            if(elapsedTime > hitDelay)
+            {
+                player.GetComponent<Character>().ReduceHealth(enemyDamage);
+                elapsedTime = 0f;
+            }
         }
     }
 

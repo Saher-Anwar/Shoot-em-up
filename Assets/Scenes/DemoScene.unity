@@ -326,6 +326,8 @@ MonoBehaviour:
   spawnMask:
     serializedVersion: 2
     m_Bits: 8
+  enemiesKilled: 0
+  killCountText: {fileID: 80979458}
 --- !u!4 &672419350
 Transform:
   m_ObjectHideFlags: 0
