@@ -162,6 +162,7 @@ MonoBehaviour:
   enemyHealth: 100
   enemyDamage: 10
   enemySize: 100
+  hitDelay: 3.5
 --- !u!114 &4958888793293657699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +177,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyControl: {fileID: 4958888793293657698}
   playerControl: {fileID: 0}
-  stopDistance: 15
   detectionRange: 80
   detectDistance: 2.5
 --- !u!114 &4958888793293657700
