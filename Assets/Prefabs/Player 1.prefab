@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkingSpeed: 4
-  runningSpeed: 10
+  runningSpeed: 6
   dashDistance: 3
   animator: {fileID: 1226883159984373}
 --- !u!114 &481721452065661164
@@ -1211,7 +1211,7 @@ MonoBehaviour:
   defence: 0
   attackPower: 0
   staminaReduction: 0.2
-  staminaRegen: 0.01
+  staminaRegen: 0.05
   staminaRegenWaitTime: 4
   currentStamina: 0
   staminaState: 0

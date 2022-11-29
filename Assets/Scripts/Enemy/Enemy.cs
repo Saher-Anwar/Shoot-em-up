@@ -8,11 +8,11 @@ public class Enemy : MonoBehaviour
 {
 
     public float enemyHealth;
-    public float enemyDamage;
     public float enemySize;
     Animator animator;
     public float hitDelay = 4f;
 
+    private float enemyDamage;
     private GameManager gameManager;
     private bool isEnemyDeathCalled = false;
     private float elapsedTime = 0;
@@ -22,12 +22,8 @@ public class Enemy : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        DoDamage();
+        GetComponent<NavMeshAgent>().speed = Random.Range(4, 8);
+        enemyDamage = Random.Range(10, 40);
     }
 
     public void ReduceHealth(float damage)
@@ -50,7 +46,7 @@ public class Enemy : MonoBehaviour
     public void DoDamage()
     {
         GameObject player = gameObject.GetComponent<EnemyTarget>().target;
-        float distanceToDoDamage = gameObject.GetComponent<NavMeshAgent>().stoppingDistance;
+        float distanceToDoDamage = gameObject.GetComponent<NavMeshAgent>().stoppingDistance + .5f;
 
         if (Vector3.Distance(player.transform.position, gameObject.transform.position) <= distanceToDoDamage)
         {

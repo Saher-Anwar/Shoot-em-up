@@ -37,9 +37,10 @@ public class EnemyMovement : MonoBehaviour
         if (detectDistance <= detectionRange) {
             agent.SetDestination(target.position);
             animator.SetBool("Run",true);
-            if (detectDistance <= agent.stoppingDistance) {
+            if (detectDistance <= agent.stoppingDistance + 0.5f) {
                 transform.LookAt(playerControl.transform.position);
                 animator.SetBool("Attack", true);
+                GetComponent<Enemy>().DoDamage();
             }
             else
             {
