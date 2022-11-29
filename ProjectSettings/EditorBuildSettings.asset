@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Start.unity
     guid: 419bd5765624540869e9d7a7a6218f1a
   - enabled: 1
-    path: Assets/Scenes/BaseScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
     path: Assets/Sandbox/Hesham/Desert.unity
     guid: 775dc05d22f28784188c27b56cecec03
   - enabled: 1
