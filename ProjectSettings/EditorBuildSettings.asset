@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Start.unity
     guid: 419bd5765624540869e9d7a7a6218f1a
   - enabled: 1
+    path: Assets/Scenes/Mission.unity
+    guid: 08388cbe48f424e009ab31054efe70f4
+  - enabled: 1
     path: Assets/Scenes/DemoScene.unity
     guid: 1747a86a74132864a82526008380d784
   - enabled: 1
@@ -16,5 +19,5 @@ EditorBuildSettings:
     guid: 8708b27540835314b9206b1c0bc1f5e8
   - enabled: 1
     path: Assets/Scenes/End.unity
-    guid: 08388cbe48f424e009ab31054efe70f4
+    guid: 1d3c628b60fe2aa42ba1693320297a0a
   m_configObjects: {}
