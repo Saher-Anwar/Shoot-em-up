@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,10 +19,19 @@ public class GameManager : MonoBehaviour
     public float enemiesKilled;
     public TextMeshProUGUI killCountText;
 
+    [Header("Component")]
+    public TextMeshProUGUI timerText;
+    [Header("Timer Settings")]
+    public float currentTime;
+    public bool countDown;
+
+    private float setTime;
+
     // Start is called before the first frame update
     void Start()
     {
         enemiesKilled = 0;
+        setTime = currentTime;
     }
 
     // Update is called once per frame
@@ -32,6 +42,20 @@ public class GameManager : MonoBehaviour
         foreach (var contactPoint in contactPoints)
         {
             Spawn(contactPoint?.transform);  // Spawning for each collision
+        }
+
+        if (countDown)
+        {
+            currentTime -= Time.deltaTime;
+        }
+        else
+        {
+            currentTime += Time.deltaTime;
+        }
+        timerText.text = currentTime.ToString("0.0");
+        if (countDown && currentTime <= 0 || !countDown && currentTime >= setTime)
+        {
+            SceneManager.LoadScene("WinScreen");
         }
     }
 
@@ -60,3 +84,4 @@ public class GameManager : MonoBehaviour
         killCountText.text = enemiesKilled.ToString();
     }
 }
+
