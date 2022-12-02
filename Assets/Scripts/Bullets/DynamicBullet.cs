@@ -1,64 +1,109 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class DynamicBullet : MonoBehaviour
 {
-    public float damage = 5f;
     public GameObject hitEffect;
-    public float destroyBulletWaitTime = 5f;
-    public PhysicMaterial bounceMaterial;
-    public float bounciness = .5f;
+    public AudioClip sfx;
 
-    private Rigidbody rb;
-    // Start is called before the first frame update
-    void Start()
+    public float damage;
+    public float damageRadius = 2f;
+    public float destroyBulletWaitTime;
+    public float bounceLimit = 3;
+    [Range(10f, 100f)]
+    public float bounciness = 30f;
+
+    private float bounceCount = 0;
+    private new Rigidbody rigidbody;
+    private new AudioSource audio;
+
+    private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.useGravity = true;
+        bounceLimit *= 2;
+        rigidbody = GetComponent<Rigidbody>();
+        audio = GetComponent<AudioSource>();
 
-        if(bounceMaterial == null)
-        {
-            Debug.LogError("No bounce material attached. Either attach a bounce material or use regular Bullet script.");
-        }
-
-        bounceMaterial.bounciness = bounciness;
+        StartCoroutine(DestroyBullet());
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag.Equals("Bullet"))
-        {
-            return;
-        }
-
-        if (collision.gameObject.tag.Equals("Ground"))
-        {
-            return;
-        }
-
         if (collision.gameObject.tag.Equals("Enemy"))
         {
+            // create radius and damage enemy within that radius
+
             // reduce enemy's health if they get hit by the bullet
-            // collision.GetComponent<EnemyAI>().ReduceHealth(damage);
+            DoDamage(collision.gameObject);
+            if (hitEffect != null) PlayEffects();
+
         }
 
-        if (hitEffect != null)
+        #region Bounciness Code
+        bounceCount++;
+        Debug.Log(bounceCount);
+        if(bounceCount >= bounceLimit)
         {
-            PlayEffects();
+            Destroy(gameObject);
+            if (hitEffect != null) PlayEffects();
+        }
+        else
+        {
+            rigidbody.AddForce(new Vector3(0,bounciness,0), ForceMode.Impulse);
+            Debug.Log("Adding upward force");
+        }
+        #endregion
+    }
+
+    private void DoDamage(GameObject enemy)
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, damageRadius);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.gameObject.tag.Equals("Enemy"))
+            {
+                enemy.GetComponent<Enemy>().ReduceHealth(damage);
+            }
         }
 
-        Destroy(gameObject);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        //Use the same vars you use to draw your Overlap SPhere to draw your Wire Sphere.
+        Gizmos.DrawWireSphere(transform.position, damageRadius);  
     }
 
     private void PlayEffects()
     {
-        Instantiate(hitEffect, transform.position, Quaternion.identity);
-        Destroy(hitEffect, 5f); // TODO: adjust this value to the length of the hit particle effect 
+        GameObject particleEffect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+        particleEffect.transform.parent = null;
+       
+        AudioSource audio = particleEffect.GetComponent<AudioSource>();
+
+        #region Error Checking
+        if (audio == null)
+        {
+            Debug.LogWarning("Particle effect game object does not have Audio Source component attached!");
+            return;
+        }
+
+        if(sfx == null)
+        {
+            Debug.LogWarning("No sound effect attached!");
+            return;
+        }
+        #endregion
+
+        audio.clip = sfx;
+        audio.PlayOneShot(audio.clip);
     }
 
     IEnumerator DestroyBullet()
     {
+        // TODO: blow up and destroy bullet
         yield return new WaitForSeconds(destroyBulletWaitTime);
         Destroy(gameObject);
     }
