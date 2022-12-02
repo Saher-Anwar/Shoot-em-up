@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("End");
+                SceneManager.LoadScene("LoseScreen");
             }
 
         }
