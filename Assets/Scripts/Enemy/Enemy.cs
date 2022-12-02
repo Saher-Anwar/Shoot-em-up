@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     public float enemySize;
     Animator animator;
     public float hitDelay = 4f;
+    public float upperDamage;
+    public float lowerDamage;
 
     private float enemyDamage;
     private GameManager gameManager;
@@ -23,7 +25,7 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
         GetComponent<NavMeshAgent>().speed = Random.Range(4, 8);
-        enemyDamage = Random.Range(10, 40);
+        enemyDamage = Random.Range(lowerDamage, upperDamage);
     }
 
     public void ReduceHealth(float damage)

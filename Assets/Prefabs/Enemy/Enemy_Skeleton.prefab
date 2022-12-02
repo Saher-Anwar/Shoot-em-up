@@ -162,6 +162,8 @@ MonoBehaviour:
   enemyHealth: 100
   enemySize: 100
   hitDelay: 2
+  upperDamage: 10
+  lowerDamage: 40
 --- !u!114 &4958888793293657699
 MonoBehaviour:
   m_ObjectHideFlags: 0
