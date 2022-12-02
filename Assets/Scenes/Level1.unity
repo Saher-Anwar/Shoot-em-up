@@ -469,8 +469,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 807b394273ca3334eb537affdd315cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4958888793621038557}
+  enemyPrefab: {fileID: 4958888793293657628, guid: 05ca285cf284d0946be7604d24555d3d,
+    type: 3}
   spawnInterval: 7
+  targetKills: 0
   player: {fileID: 481721451214979076}
   spawnRange: 25
   spawnMask:
@@ -2603,7 +2605,7 @@ GameObject:
   - component: {fileID: 440582525}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4446,6 +4448,8 @@ MonoBehaviour:
   enemyHealth: 100
   enemySize: 100
   hitDelay: 2
+  upperDamage: 0
+  lowerDamage: 0
 --- !u!114 &4958888793621038501
 MonoBehaviour:
   m_ObjectHideFlags: 0

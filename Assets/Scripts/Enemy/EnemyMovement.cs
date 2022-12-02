@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
         animator = GetComponent<Animator>();
 
         // Code will slow down game if scene contains many objects.
-        // playerControl = FindObjectOfType<Character>();
+        playerControl = FindObjectOfType<Character>();
     }
 
     // Update is called once per frame
