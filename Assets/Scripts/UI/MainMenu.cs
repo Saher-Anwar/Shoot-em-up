@@ -17,6 +17,6 @@ public class MainMenu : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene("DemoScene");
+        SceneManager.LoadScene("Level1");
     }
 }
