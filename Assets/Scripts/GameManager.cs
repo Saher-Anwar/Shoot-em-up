@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private GameObject enemyPrefab;     // Enemy model to clone
     [SerializeField]
     private float spawnInterval = 2f;   // Interval between each spawn
+    [SerializeField]
+    public float targetKills;
 
     public Character player;            // To use player position when casting sphere
     public float spawnRange = 25f;      // Radius of the sphere
@@ -55,7 +57,15 @@ public class GameManager : MonoBehaviour
         timerText.text = currentTime.ToString("0.0");
         if (countDown && currentTime <= 0 || !countDown && currentTime >= setTime)
         {
-            SceneManager.LoadScene("WinScreen");
+            if (targetKills <= enemiesKilled)
+            {
+                SceneManager.LoadScene("WinScreen");
+            }
+            else
+            {
+                SceneManager.LoadScene("End");
+            }
+
         }
     }
 

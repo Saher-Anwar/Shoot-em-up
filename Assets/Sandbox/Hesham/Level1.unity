@@ -405,6 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1993376615}
   spawnInterval: 7
+  targetKills: 10
   player: {fileID: 689381775}
   spawnRange: 25
   spawnMask:
