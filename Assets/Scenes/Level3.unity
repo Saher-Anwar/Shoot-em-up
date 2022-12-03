@@ -1558,7 +1558,7 @@ MonoBehaviour:
   - {fileID: 4958888793293657628, guid: 05ca285cf284d0946be7604d24555d3d, type: 3}
   - {fileID: 7275984772658876532, guid: 12ad8ab6c3c87ad43865c8ed9c2cd7e8, type: 3}
   spawnInterval: 10
-  targetKills: 0
+  targetKills: 100
   player: {fileID: 1046934423}
   spawnRange: 25
   spawnMask:
@@ -1568,7 +1568,7 @@ MonoBehaviour:
   killCountText: {fileID: 2125424324}
   timerText: {fileID: 120544881}
   currentTime: 60
-  countDown: 1
+  timeMatters: 0
   initialSpawnInterval: 0
 --- !u!4 &134654027
 Transform:

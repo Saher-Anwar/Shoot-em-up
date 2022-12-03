@@ -26,9 +26,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     [Header("Timer Settings")]
     public float currentTime;
-    public bool countDown;
+    public bool timeMatters;
 
-    private float setTime;
     private float elapsedTime = 0;
     private float minutesInSeconds = 60f;
     public float initialSpawnInterval;
@@ -39,8 +38,15 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         enemiesKilled = 0;
-        setTime = currentTime;
         initialSpawnInterval = spawnInterval;
+        if(targetKills == 0)
+        {
+            killCondition = true;
+        }
+        if (!timeMatters)
+        {
+            timeCondition = true;
+        }
     }
 
     // Update is called once per frame
@@ -60,7 +66,7 @@ public class GameManager : MonoBehaviour
             Spawn(contactPoint?.transform);  // Spawning for each collision
         }
 
-        if (countDown)
+        if (timeMatters)
         {
             currentTime -= Time.deltaTime;
         }
@@ -71,7 +77,7 @@ public class GameManager : MonoBehaviour
 
         timerText.text = currentTime.ToString("0.0");
 
-        if (countDown && currentTime <= 0 || !countDown && currentTime >= setTime)
+        if ( (timeMatters && currentTime <= 0) || (!timeMatters))
         {
             timeCondition = true;
         }
@@ -80,7 +86,7 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("WinScreen");
         }
-        else if(timeCondition && !killCondition)
+        else if(timeCondition && timeMatters && !killCondition)
         {
             SceneManager.LoadScene("LoseScreen");
         }

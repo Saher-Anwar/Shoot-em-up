@@ -1508,7 +1508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SURVIVE IN THE WILDERNESS ALONE FOR 5 MINUTES and kill at least 50 enemies!!
+  m_text: SURVIVE IN THE WILDERNESS ALONE FOR 5 MINUTES and kill at least 30 enemies!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e0efb8cfebd24432da75cfbb11eaf876, type: 2}
   m_sharedMaterial: {fileID: -6343968702131693556, guid: e0efb8cfebd24432da75cfbb11eaf876,
