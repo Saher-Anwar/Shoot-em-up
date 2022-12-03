@@ -112,10 +112,18 @@ public class Character : MonoBehaviour
                 initialGunReference.GetComponent<Gun>().timeBetweenFire /= 2;
             }
         }
+        if (other.gameObject.tag.Equals("DefensePowerUp"))
+        {
+            Debug.Log("Increasing defense");
+            Destroy(other.gameObject);
+            IncreaseDefense(10);
+        }
     }
 
     public void ReduceHealth(float damage)
     {
+        if (damage - defence < 0) return;
+
         currentHealth -= (damage - defence);
         healthBar.setHealth(currentHealth);
         if(currentHealth <= 0)
@@ -158,5 +166,9 @@ public class Character : MonoBehaviour
         staminaBar.SetCurrentStamina(currentStamina);
     }
 
-
+    public void IncreaseDefense(float increaseAmount)
+    {
+        defence += increaseAmount;
+        Debug.Log("Increasing defense");
+    }
 }

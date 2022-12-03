@@ -3062,7 +3062,7 @@ MonoBehaviour:
   enemyHealth: 100
   enemySize: 100
   hitDelay: 0.7
-  upperDamage: 2
+  upperDamage: 12
   lowerDamage: 20
 --- !u!114 &7275984772658876427
 MonoBehaviour:

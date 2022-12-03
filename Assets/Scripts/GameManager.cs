@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.Universal.Internal;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,17 +29,28 @@ public class GameManager : MonoBehaviour
     public bool countDown;
 
     private float setTime;
+    private float elapsedTime = 0;
+    private float minutesInSeconds = 60f;
+    public float initialSpawnInterval;
 
     // Start is called before the first frame update
     void Start()
     {
         enemiesKilled = 0;
         setTime = currentTime;
+        initialSpawnInterval = spawnInterval;
     }
 
     // Update is called once per frame
     void Update()
     {
+        elapsedTime += Time.deltaTime;
+        if(elapsedTime > minutesInSeconds)
+        {
+            minutesInSeconds += 60;
+            initialSpawnInterval--;
+        }
+
         // Checking all collisions with spawn points and saving in array
         Collider[] contactPoints = Physics.OverlapSphere(player.transform.position, spawnRange, spawnMask);
         foreach (var contactPoint in contactPoints)
@@ -78,7 +90,7 @@ public class GameManager : MonoBehaviour
         {
             int randomEnemy = Random.Range(0, enemyPrefab.Length);
             Instantiate(enemyPrefab[randomEnemy], spawnLocation.position, spawnLocation.rotation);
-            spawnInterval = 2f;
+            spawnInterval = initialSpawnInterval;
         }
     }
 
