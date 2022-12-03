@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -502,7 +502,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1060870042}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: playGame
+        m_MethodName: startLevel3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1513,7 +1513,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SURVIVE IN THE WILDERNESS ALONE FOR 5 MINUTES UNTIL EXTRACTION.
+  m_text: Defeat your former comrades.. And let your insanity loose!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e0efb8cfebd24432da75cfbb11eaf876, type: 2}
   m_sharedMaterial: {fileID: -6343968702131693556, guid: e0efb8cfebd24432da75cfbb11eaf876,
@@ -1650,8 +1650,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: After a long battle, Yuusha finds himself in a vast desert. However, evil
-    lurks around him....
+  m_text: Yuusha's comrades are now back to get him back to insanity!! Turns out
+    they never meant abandoned him, they were only seperated. But will Yuusha let
+    them help?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e0efb8cfebd24432da75cfbb11eaf876, type: 2}
   m_sharedMaterial: {fileID: -6343968702131693556, guid: e0efb8cfebd24432da75cfbb11eaf876,

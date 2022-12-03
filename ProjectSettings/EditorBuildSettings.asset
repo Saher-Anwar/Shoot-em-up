@@ -9,12 +9,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Start.unity
     guid: 419bd5765624540869e9d7a7a6218f1a
   - enabled: 1
-    path: Assets/Scenes/Mission.unity
-    guid: 08388cbe48f424e009ab31054efe70f4
-  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 1747a86a74132864a82526008380d784
   - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 2044b90b3c426d540a5dd87443107bff
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: ae5735ac857209b46ab2385ff42a53c1
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 8ae82daf767995c45ace49720a429051
+  - enabled: 1
     path: Assets/Scenes/LoseScreen.unity
     guid: 1d3c628b60fe2aa42ba1693320297a0a
+  - enabled: 1
+    path: Assets/Scenes/Mission1.unity
+    guid: e1e4d0175db241d4ebdda71bdb731a46
+  - enabled: 1
+    path: Assets/Scenes/Mission2.unity
+    guid: ec59ed0f6a1775e43811eb8dec43dfd9
+  - enabled: 1
+    path: Assets/Scenes/Mission3.unity
+    guid: 08388cbe48f424e009ab31054efe70f4
   m_configObjects: {}
