@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.008593498, g: 0.06462149, b: 0.2014094, a: 1}
+  m_IndirectSpecularColor: {r: 0.008611938, g: 0.06470591, b: 0.20160417, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10170,10 +10170,12 @@ MonoBehaviour:
   staminaState: 0
   healthBar: {fileID: 1469488852}
   staminaBar: {fileID: 795808849}
-  weaponContainerReference: {fileID: 0}
-  initialGunReference: {fileID: 0}
-  grenadeLauncher: {fileID: 0}
-  multibulletGun: {fileID: 0}
+  weaponContainerReference: {fileID: 1970238187}
+  initialGunReference: {fileID: 649820897}
+  grenadeLauncher: {fileID: 1687466336182181164, guid: 85b546a53cb86b14abf199903cef5a55,
+    type: 3}
+  multibulletGun: {fileID: 4500949055332802848, guid: f9507f2bdf765844a9f1fcc9c547c3a9,
+    type: 3}
   bloodEffect: {fileID: 1627309587509711730, guid: db835245da3b2fd45a1f9722eb36c3db,
     type: 3}
 --- !u!82 &1046934424
