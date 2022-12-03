@@ -1557,7 +1557,7 @@ MonoBehaviour:
   - {fileID: 2027737565352381634, guid: a2b29048139733f4ab081d9130b98c41, type: 3}
   - {fileID: 4958888793293657628, guid: 05ca285cf284d0946be7604d24555d3d, type: 3}
   - {fileID: 7275984772658876532, guid: 12ad8ab6c3c87ad43865c8ed9c2cd7e8, type: 3}
-  spawnInterval: 2
+  spawnInterval: 10
   targetKills: 0
   player: {fileID: 1046934423}
   spawnRange: 25
