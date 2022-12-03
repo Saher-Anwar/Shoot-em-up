@@ -12,6 +12,7 @@ TagManager:
   - staminaItem
   - FxTemporaire
   - Gun
+  - Multibullet Gun
   layers:
   - Default
   - TransparentFX

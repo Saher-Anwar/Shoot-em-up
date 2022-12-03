@@ -24,6 +24,10 @@ public class Character : MonoBehaviour
 
     public HealthBar healthBar;
     public StaminaBar staminaBar;
+    public GameObject weaponContainerReference;
+    public GameObject initialGunReference;
+    public GameObject grenadeLauncher;
+    public GameObject multibulletGun;
 
     public enum STAMINA_STATE
     {
@@ -63,7 +67,6 @@ public class Character : MonoBehaviour
             }
         }
 
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -79,6 +82,27 @@ public class Character : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log("stamina collider");
             AddStamina(20.0f);
+        }
+        if (other.gameObject.tag.Equals("Gun"))
+        {
+            initialGunReference.SetActive(false);
+            Destroy(other.gameObject);
+
+            if (grenadeLauncher != null)
+            {
+                GameObject newGrenadeLauncher = Instantiate(grenadeLauncher, weaponContainerReference.transform);
+                newGrenadeLauncher.GetComponent<GrenadeLauncher>().enabled = true;
+            }
+        }
+        if(other.gameObject.tag.Equals("Multibullet Gun"))
+        {
+            initialGunReference.SetActive(false);
+            Destroy(other.gameObject);
+
+            if (grenadeLauncher != null)
+            {
+                GameObject newMultibulletGun = Instantiate(multibulletGun, weaponContainerReference.transform);
+            }
         }
     }
 
