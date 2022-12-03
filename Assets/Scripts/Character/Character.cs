@@ -104,6 +104,14 @@ public class Character : MonoBehaviour
                 GameObject newMultibulletGun = Instantiate(multibulletGun, weaponContainerReference.transform);
             }
         }
+        if (other.gameObject.tag.Equals("AttackSpeedPowerUp"))
+        {
+            Destroy(other.gameObject);
+            if (initialGunReference.activeInHierarchy)
+            {
+                initialGunReference.GetComponent<Gun>().timeBetweenFire /= 2;
+            }
+        }
     }
 
     public void ReduceHealth(float damage)
