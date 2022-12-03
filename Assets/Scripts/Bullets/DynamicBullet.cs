@@ -35,7 +35,7 @@ public class DynamicBullet : MonoBehaviour
             // create radius and damage enemy within that radius
 
             // reduce enemy's health if they get hit by the bullet
-            DoDamage(collision.gameObject);
+            DoDamage();
             if (hitEffect != null) PlayEffects();
 
         }
@@ -45,6 +45,7 @@ public class DynamicBullet : MonoBehaviour
         Debug.Log(bounceCount);
         if(bounceCount >= bounceLimit)
         {
+            DoDamage();
             Destroy(gameObject);
             if (hitEffect != null) PlayEffects();
         }
@@ -56,14 +57,14 @@ public class DynamicBullet : MonoBehaviour
         #endregion
     }
 
-    private void DoDamage(GameObject enemy)
+    private void DoDamage()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, damageRadius);
         foreach (Collider collider in colliders)
         {
             if (collider.gameObject.tag.Equals("Enemy"))
             {
-                enemy.GetComponent<Enemy>().ReduceHealth(damage);
+                collider.gameObject.GetComponent<Enemy>()?.ReduceHealth(damage);
             }
         }
 
