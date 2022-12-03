@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.008611938, g: 0.06470591, b: 0.20160417, a: 1}
+  m_IndirectSpecularColor: {r: 0.008593498, g: 0.06462149, b: 0.2014094, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1569,6 +1569,7 @@ MonoBehaviour:
   timerText: {fileID: 120544881}
   currentTime: 60
   countDown: 1
+  initialSpawnInterval: 0
 --- !u!4 &134654027
 Transform:
   m_ObjectHideFlags: 0
@@ -10173,6 +10174,8 @@ MonoBehaviour:
   initialGunReference: {fileID: 0}
   grenadeLauncher: {fileID: 0}
   multibulletGun: {fileID: 0}
+  bloodEffect: {fileID: 2324840159554260637, guid: db835245da3b2fd45a1f9722eb36c3db,
+    type: 3}
 --- !u!82 &1046934424
 AudioSource:
   m_ObjectHideFlags: 0
