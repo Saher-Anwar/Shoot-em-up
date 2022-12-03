@@ -1707,7 +1707,7 @@ GameObject:
   - component: {fileID: 120995999434623571}
   - component: {fileID: 120995999434623572}
   m_Layer: 0
-  m_Name: Enemy_Creature
+  m_Name: Enemy_Creature_Blue
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

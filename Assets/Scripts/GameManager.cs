@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     // Declaring required variables
     [SerializeField]
-    private GameObject enemyPrefab;     // Enemy model to clone
+    private GameObject[] enemyPrefab;     // Enemy model to clone
     [SerializeField]
     private float spawnInterval = 2f;   // Interval between each spawn
     [SerializeField]
@@ -76,7 +76,8 @@ public class GameManager : MonoBehaviour
         spawnInterval -= Time.deltaTime;
         if (spawnInterval <= 0)
         {
-            Instantiate(enemyPrefab, spawnLocation.position, spawnLocation.rotation);
+            int randomEnemy = Random.Range(0, enemyPrefab.Length);
+            Instantiate(enemyPrefab[randomEnemy], spawnLocation.position, spawnLocation.rotation);
             spawnInterval = 2f;
         }
     }

@@ -424,7 +424,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 0f1ffbd8db52f4f67954c025ba131233, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 1e0e4683b9a367f4fa03057c2493d874, type: 2}
 --- !u!4 &572329731
 Transform:
   m_ObjectHideFlags: 0
@@ -433,7 +433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572329729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 224.53644, y: 4.202799, z: 79.18815}
+  m_LocalPosition: {x: 224.53644, y: 14.37, z: 79.18815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -469,9 +469,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 807b394273ca3334eb537affdd315cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4958888793293657628, guid: 05ca285cf284d0946be7604d24555d3d,
-    type: 3}
-  spawnInterval: 7
+  enemyPrefab:
+  - {fileID: 4958888793293657628, guid: 05ca285cf284d0946be7604d24555d3d, type: 3}
+  spawnInterval: 2
   targetKills: 0
   player: {fileID: 481721451214979076}
   spawnRange: 25
