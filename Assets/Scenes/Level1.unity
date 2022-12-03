@@ -5527,7 +5527,7 @@ MonoBehaviour:
     type: 3}
   multibulletGun: {fileID: 4500949055332802848, guid: f9507f2bdf765844a9f1fcc9c547c3a9,
     type: 3}
-  bloodEffect: {fileID: 2324840159554260637, guid: db835245da3b2fd45a1f9722eb36c3db,
+  bloodEffect: {fileID: 1627309587509711730, guid: db835245da3b2fd45a1f9722eb36c3db,
     type: 3}
 --- !u!114 &481721451214979077
 MonoBehaviour:

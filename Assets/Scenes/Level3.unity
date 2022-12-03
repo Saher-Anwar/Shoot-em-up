@@ -1567,7 +1567,7 @@ MonoBehaviour:
   enemiesKilled: 0
   killCountText: {fileID: 2125424324}
   timerText: {fileID: 120544881}
-  currentTime: 60
+  currentTime: 0
   timeMatters: 0
   initialSpawnInterval: 0
 --- !u!4 &134654027
@@ -10174,7 +10174,7 @@ MonoBehaviour:
   initialGunReference: {fileID: 0}
   grenadeLauncher: {fileID: 0}
   multibulletGun: {fileID: 0}
-  bloodEffect: {fileID: 2324840159554260637, guid: db835245da3b2fd45a1f9722eb36c3db,
+  bloodEffect: {fileID: 1627309587509711730, guid: db835245da3b2fd45a1f9722eb36c3db,
     type: 3}
 --- !u!82 &1046934424
 AudioSource:
