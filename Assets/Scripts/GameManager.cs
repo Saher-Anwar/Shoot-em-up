@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     private float elapsedTime = 0;
     private float minutesInSeconds = 60f;
     public float initialSpawnInterval;
+    private bool timeCondition = false;
+    private bool killCondition = false;
 
     // Start is called before the first frame update
     void Start()
@@ -66,19 +68,23 @@ public class GameManager : MonoBehaviour
         {
             currentTime += Time.deltaTime;
         }
+
         timerText.text = currentTime.ToString("0.0");
+
         if (countDown && currentTime <= 0 || !countDown && currentTime >= setTime)
         {
-            if (targetKills <= enemiesKilled)
-            {
-                SceneManager.LoadScene("WinScreen");
-            }
-            else
-            {
-                SceneManager.LoadScene("LoseScreen");
-            }
-
+            timeCondition = true;
         }
+
+        if (timeCondition && killCondition)
+        {
+            SceneManager.LoadScene("WinScreen");
+        }
+        else if(timeCondition && !killCondition)
+        {
+            SceneManager.LoadScene("LoseScreen");
+        }
+
     }
 
     // Enemy Spawner at set intervals
@@ -105,6 +111,10 @@ public class GameManager : MonoBehaviour
     {
         enemiesKilled++;
         killCountText.text = enemiesKilled.ToString();
+        if (enemiesKilled >= targetKills)
+        {
+            killCondition = true;
+        }
     }
 }
 

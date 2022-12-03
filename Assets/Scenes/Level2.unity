@@ -12934,16 +12934,16 @@ MonoBehaviour:
   - {fileID: 2108522335123820089, guid: 4a79733ec45bfb14886871c547877202, type: 3}
   - {fileID: 2027737565352381634, guid: a2b29048139733f4ab081d9130b98c41, type: 3}
   spawnInterval: 10
-  targetKills: 0
+  targetKills: 10
   player: {fileID: 481721452568022342}
   spawnRange: 55
   spawnMask:
     serializedVersion: 2
     m_Bits: 8
-  enemiesKilled: 0
+  enemiesKilled: 50
   killCountText: {fileID: 5141567996371666155}
   timerText: {fileID: 5141567995196871342}
-  currentTime: 59.8
+  currentTime: 300
   countDown: 1
   initialSpawnInterval: 0
 --- !u!4 &1451265218
