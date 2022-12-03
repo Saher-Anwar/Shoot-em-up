@@ -21,6 +21,7 @@ public class Character : MonoBehaviour
     public float currentStamina; // TODO: change to private 
     public STAMINA_STATE staminaState;
     private float elapsedTime = 0;
+    private float waitBeforeLoseScreen = 1.5f;
 
     public HealthBar healthBar;
     public StaminaBar staminaBar;
@@ -28,6 +29,7 @@ public class Character : MonoBehaviour
     public GameObject initialGunReference;
     public GameObject grenadeLauncher;
     public GameObject multibulletGun;
+    public GameObject bloodEffect;
 
     public enum STAMINA_STATE
     {
@@ -126,9 +128,10 @@ public class Character : MonoBehaviour
 
         currentHealth -= (damage - defence);
         healthBar.setHealth(currentHealth);
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
-            SceneManager.LoadScene("LoseScreen");
+            PlayDeathEffects();
+            StartCoroutine(LoseScreen());
         }
     }
 
@@ -170,5 +173,16 @@ public class Character : MonoBehaviour
     {
         defence += increaseAmount;
         Debug.Log("Increasing defense");
+    }
+
+    private void PlayDeathEffects()
+    {
+        GameObject particleEffect = Instantiate(bloodEffect, transform.position, Quaternion.identity);
+    }
+
+    IEnumerator LoseScreen()
+    {
+        yield return new WaitForSeconds(waitBeforeLoseScreen);
+        SceneManager.LoadScene("LoseScreen");
     }
 }
