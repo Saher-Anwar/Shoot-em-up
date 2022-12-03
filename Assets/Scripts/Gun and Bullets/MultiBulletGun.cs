@@ -12,6 +12,12 @@ public class MultiBulletGun : MonoBehaviour
     public float timeBetweenFire;     // wait time before firing the next bullet
 
     private float elapsedTime = 0f;
+    private new AudioSource audio;
+
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,6 +38,7 @@ public class MultiBulletGun : MonoBehaviour
 
     private void Shoot()
     {
+        audio.PlayOneShot(audio.clip);
         GameObject bullet;
         int angle = -60;
         for ( int i = 0; i<5; i++)
