@@ -164,7 +164,7 @@ MonoBehaviour:
   sfx: {fileID: 8300000, guid: 1fd31868d68903d4f9e2c4a3b7ef98f3, type: 3}
   damage: 10
   damageRadius: 3
-  destroyBulletWaitTime: 2
+  destroyBulletWaitTime: 5
   bounceLimit: 2
   bounciness: 35
 --- !u!1 &8966980725373669346

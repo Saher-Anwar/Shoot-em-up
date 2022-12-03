@@ -10,6 +10,8 @@ TagManager:
   - healthPotion
   - heartItem
   - staminaItem
+  - FxTemporaire
+  - Gun
   layers:
   - Default
   - TransparentFX

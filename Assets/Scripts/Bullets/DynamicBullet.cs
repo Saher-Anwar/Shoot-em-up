@@ -46,8 +46,8 @@ public class DynamicBullet : MonoBehaviour
         if(bounceCount >= bounceLimit)
         {
             DoDamage();
-            Destroy(gameObject);
             if (hitEffect != null) PlayEffects();
+            Destroy(gameObject);
         }
         else
         {
