@@ -1416,6 +1416,12 @@ MonoBehaviour:
   staminaState: 0
   healthBar: {fileID: 0}
   staminaBar: {fileID: 0}
+  weaponContainerReference: {fileID: 1226883152739139}
+  initialGunReference: {fileID: 1226881505607069}
+  grenadeLauncher: {fileID: 1687466336182181164, guid: 85b546a53cb86b14abf199903cef5a55,
+    type: 3}
+  multibulletGun: {fileID: 4500949055332802848, guid: f9507f2bdf765844a9f1fcc9c547c3a9,
+    type: 3}
 --- !u!82 &689381781
 AudioSource:
   m_ObjectHideFlags: 0
