@@ -180,7 +180,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &339076203
 GameObject:
@@ -830,7 +830,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1757639099
 GameObject:
@@ -925,7 +925,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1757639102
 MonoBehaviour:
@@ -2307,6 +2307,10 @@ MonoBehaviour:
   staminaState: 0
   healthBar: {fileID: 1444768260832280459}
   staminaBar: {fileID: 1444768261085521649}
+  weaponContainerReference: {fileID: 0}
+  initialGunReference: {fileID: 0}
+  grenadeLauncher: {fileID: 0}
+  multibulletGun: {fileID: 0}
 --- !u!114 &481721452568022343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3437,7 +3441,7 @@ RectTransform:
   - {fileID: 5141567996371666152}
   - {fileID: 5141567995196871343}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5488,7 +5492,7 @@ Transform:
   m_Children:
   - {fileID: 5081451473067702788}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &5081451473292354671
 MonoBehaviour:
@@ -5975,7 +5979,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5141960141768673687
 MonoBehaviour:
