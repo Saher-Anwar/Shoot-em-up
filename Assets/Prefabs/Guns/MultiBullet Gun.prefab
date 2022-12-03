@@ -229,4 +229,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1204636484335687523, guid: 5f7e1671172e3704e89929a98dbed46c,
     type: 3}
   bulletForce: 10
-  timeBetweenFire: 1
+  timeBetweenFire: 0.7
