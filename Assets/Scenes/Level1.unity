@@ -471,6 +471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab:
   - {fileID: 4958888793293657628, guid: 05ca285cf284d0946be7604d24555d3d, type: 3}
+  - {fileID: 7275984772658876532, guid: 12ad8ab6c3c87ad43865c8ed9c2cd7e8, type: 3}
   spawnInterval: 2
   targetKills: 0
   player: {fileID: 481721451214979076}
@@ -2538,6 +2539,10 @@ MonoBehaviour:
   staminaState: 0
   healthBar: {fileID: 6005090291553775442}
   staminaBar: {fileID: 6005090292378498600}
+  weaponContainerReference: {fileID: 0}
+  initialGunReference: {fileID: 0}
+  grenadeLauncher: {fileID: 0}
+  multibulletGun: {fileID: 0}
 --- !u!114 &481721451214979077
 MonoBehaviour:
   m_ObjectHideFlags: 0
