@@ -190,11 +190,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grenade Launcher
       objectReference: {fileID: 0}
-    - target: {fileID: 1687466336182181164, guid: 85b546a53cb86b14abf199903cef5a55,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85b546a53cb86b14abf199903cef5a55, type: 3}
 --- !u!1 &978850250
